@@ -19,4 +19,21 @@ public class Car
         Date = date;
     }
 
+    /// <summary>
+    /// Returns fixed price as a double
+    /// </summary>
+    /// <returns>The price of the vehicle</returns>
+    public double Price()
+    {
+        return 230.0;
+    }
+
+    /// <summary>
+    /// Returns vehicle type as a string
+    /// </summary>
+    /// <returns>The type of vehicle</returns>
+    public string VehicleType()
+    {
+        return "Car";
+    }
 }
