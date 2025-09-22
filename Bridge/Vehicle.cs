@@ -16,10 +16,27 @@ public abstract class Vehicle
     public bool Brobizz { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the Vehicle class with a specified date
+    /// Initilizes a new instance of a vehicle
+    /// Date will always be set to the immediate day and time when initializing
+    /// </summary>
+    /// <param name="licensePlate">A string consisting of numbers and letters</param>
+    /// <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+    public Vehicle(string licensePlate, bool brobizz)
+    {
+        LicensePlate = licensePlate;
+        Date = DateTime.Now;
+        Brobizz = brobizz;
+
+        LicensePlateLengthLimit();
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the Vehicle
+    /// Date can be manually specified when initializing
     /// </summary>
     /// <param name="licensePlate">A string consisting of numbers and letters</param>
     /// <param name="date">Date associated with the vehicle</param> 
+    /// <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
     public Vehicle(string licensePlate, DateTime date, bool brobizz)
     {
         LicensePlate = licensePlate;

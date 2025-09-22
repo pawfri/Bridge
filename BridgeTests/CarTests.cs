@@ -21,7 +21,7 @@ public class CarTests
     public void PriceEqualTest(double expected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today, false);
+        var car = new Car("AB35987", false);
 
         // Act
         double actual = car.Price();
@@ -39,7 +39,7 @@ public class CarTests
     public void PriceNotEqualTest(double notExpected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today, false);
+        var car = new Car("AB35987", false);
 
         // Act
         double actual = car.Price();
@@ -53,7 +53,7 @@ public class CarTests
     public void PriceDiscountWithBrobizzTest(double exepected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today, true);
+        var car = new Car("AB35987", true);
 
         // Act
         double actual = car.Price();
@@ -67,7 +67,7 @@ public class CarTests
     public void VehicleTypeEqualTest(string expected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today, false);
+        var car = new Car("AB35987", false);
 
         // Act
         string actual = car.VehicleType();
@@ -85,7 +85,7 @@ public class CarTests
     public void VehicleTypeNotEqualTest(string notExpected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today, false);
+        var car = new Car("AB35987", false);
 
         // Act
         string actual = car.VehicleType();
@@ -101,7 +101,7 @@ public class CarTests
     public void LicensePlateLengthLimitCreateSuccessfullyTest(string licensePlate)
     {
         // Act
-        var car = new Car(licensePlate, DateTime.Today, false);
+        var car = new Car(licensePlate, false);
 
         // Assert
         Assert.IsNotNull(car);
@@ -119,7 +119,7 @@ public class CarTests
         // Act
         try
         {
-            var car = new Car(licensePlate, DateTime.Today, false);
+            var car = new Car(licensePlate, false);
         }
         catch (Exception ex)
         {

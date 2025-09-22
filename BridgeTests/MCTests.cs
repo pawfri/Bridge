@@ -21,7 +21,7 @@ public class MCTests
     public void PriceEqualTest(double expected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today, false);
+        var mc = new MC("AB35987", false);
 
         // Act
         double actual = mc.Price();
@@ -39,7 +39,7 @@ public class MCTests
     public void PriceNotEqualTest(double notExpected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today, false);
+        var mc = new MC("AB35987", false);
 
         // Act
         double actual = mc.Price();
@@ -53,7 +53,7 @@ public class MCTests
     public void PriceDiscountWithBrobizzTest(double exepected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today, true);
+        var mc = new MC("AB35987", true);
 
         // Act
         double actual = mc.Price();
@@ -67,7 +67,7 @@ public class MCTests
     public void VehicleTypeEqualTest(string exepected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today, false);
+        var mc = new MC("AB35987", false);
 
         // Act
         string actual = mc.VehicleType();
@@ -86,7 +86,7 @@ public class MCTests
     public void VehicleTypeNotEqualTest(string notExepcted)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today, false);
+        var mc = new MC("AB35987", false);
 
         // Act
         string actual = mc.VehicleType();
@@ -102,7 +102,7 @@ public class MCTests
     public void LicensePlateLengthLimitCreateSuccessfullyTest(string licensePlate)
     {
         // Act
-        var mc = new MC(licensePlate, DateTime.Today, false);
+        var mc = new MC(licensePlate, false);
 
         // Assert
         Assert.IsNotNull(mc);
@@ -120,7 +120,7 @@ public class MCTests
         // Act
         try
         {
-            var mc = new MC(licensePlate, DateTime.Today, false);
+            var mc = new MC(licensePlate, false);
         }
         catch (Exception ex)
         {

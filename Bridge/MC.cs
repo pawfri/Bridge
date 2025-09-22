@@ -13,8 +13,19 @@ namespace Bridge;
 public class MC : Vehicle
 {
     /// <summary>
-    /// Initializes a new instance of the MC class with license plate and bridge ticket date
-    /// and inherits from the vehicle base class
+    /// Initilizes a new instance of a MC (Motorcycle)
+    /// Date will always be set to the immediate day and time when initializing
+    /// </summary>
+    /// <param name="licensePlate">A string consisting of numbers and letters</param>
+    /// <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+    public MC(string licensePlate, bool brobizz)
+    : base(licensePlate, brobizz)
+    {
+    }
+
+    /// <summary>
+    /// Initilizes a new instance of a MC (Motorcycle)
+    /// Date can be manually specified when initializing
     /// </summary>
     /// <param name="licensePlate">A string consisting of numbers and letters</param>
     /// <param name="date">Date associated with the motorcycle</param>

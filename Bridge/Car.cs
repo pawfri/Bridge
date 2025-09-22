@@ -9,8 +9,19 @@ namespace Bridge;
 public class Car : Vehicle
 {
     /// <summary>
-    /// Initializes a new instance of the Car class with license plate and bridge ticket date
-    /// and inherits from the vehicle base class
+    /// Initilizes a new instance of a Car
+    /// Date will always be set to the immediate day and time when initializing
+    /// </summary>
+    /// <param name="licensePlate">A string consisting of numbers and letters</param>
+    /// <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+    public Car(string licensePlate, bool brobizz)
+        : base(licensePlate, brobizz)
+    {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of a Car
+    /// Date can be manually specified when initializing
     /// </summary>
     /// <param name="licensePlate">A string consisting of numbers and letters</param>
     public Car(string licensePlate, DateTime date, bool brobizz)
