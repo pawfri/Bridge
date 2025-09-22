@@ -13,16 +13,18 @@ public abstract class Vehicle
 {
     public string LicensePlate { get; }
     public DateTime Date { get; }
+    public bool Brobizz { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the Vehicle class with a specified date
     /// </summary>
     /// <param name="licensePlate">A string consisting of numbers and letters</param>
     /// <param name="date">Date associated with the vehicle</param> 
-    public Vehicle(string licensePlate, DateTime date)
+    public Vehicle(string licensePlate, DateTime date, bool brobizz)
     {
         LicensePlate = licensePlate;
         Date = date;
+        Brobizz = brobizz;
 
         LicensePlateLengthLimit();
     }

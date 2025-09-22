@@ -18,7 +18,7 @@ public class CarTests
     public void PriceEqualTest(double expected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today);
+        var car = new Car("AB35987", DateTime.Today, false);
 
         // Act
         double actual = car.Price();
@@ -36,7 +36,7 @@ public class CarTests
     public void PriceNotEqualTest(double notExpected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today);
+        var car = new Car("AB35987", DateTime.Today, false);
 
         // Act
         double actual = car.Price();
@@ -45,12 +45,26 @@ public class CarTests
         Assert.AreNotEqual(notExpected, actual);
     }
 
+    [DataRow(207.0)]
+    [TestMethod()]
+    public void PriceDiscountWithBrobizzTest(double exepected)
+    {
+        // Arrange
+        var car = new Car("AB35987", DateTime.Today, true);
+
+        // Act
+        double actual = car.Price();
+
+        // Assert
+        Assert.AreEqual(exepected, actual);
+    }
+
     [DataRow("Car")]
     [TestMethod()]
     public void VehicleTypeEqualTest(string expected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today);
+        var car = new Car("AB35987", DateTime.Today, false);
 
         // Act
         string actual = car.VehicleType();
@@ -68,7 +82,7 @@ public class CarTests
     public void VehicleTypeNotEqualTest(string notExpected)
     {
         // Arrange
-        var car = new Car("AB35987", DateTime.Today);
+        var car = new Car("AB35987", DateTime.Today, false);
 
         // Act
         string actual = car.VehicleType();
@@ -84,7 +98,7 @@ public class CarTests
     public void LicensePlateLengthLimitCreateSuccessfullyTest(string licensePlate)
     {
         // Act
-        var car = new Car(licensePlate, DateTime.Today);
+        var car = new Car(licensePlate, DateTime.Today, false);
 
         // Assert
         Assert.IsNotNull(car);
@@ -102,7 +116,7 @@ public class CarTests
         // Act
         try
         {
-            var car = new Car(licensePlate, DateTime.Today);
+            var car = new Car(licensePlate, DateTime.Today, false);
         }
         catch (Exception ex)
         {

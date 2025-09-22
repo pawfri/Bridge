@@ -18,7 +18,7 @@ public class MCTests
     public void PriceEqualTest(double expected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today);
+        var mc = new MC("AB35987", DateTime.Today, false);
 
         // Act
         double actual = mc.Price();
@@ -36,7 +36,7 @@ public class MCTests
     public void PriceNotEqualTest(double notExpected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today);
+        var mc = new MC("AB35987", DateTime.Today, false);
 
         // Act
         double actual = mc.Price();
@@ -45,12 +45,26 @@ public class MCTests
         Assert.AreNotEqual(notExpected, actual);
     }
 
+    [DataRow(108.0)]
+    [TestMethod()]
+    public void PriceDiscountWithBrobizzTest(double exepected)
+    {
+        // Arrange
+        var mc = new MC("AB35987", DateTime.Today, true);
+
+        // Act
+        double actual = mc.Price();
+
+        // Assert
+        Assert.AreEqual(exepected, actual);
+    }
+
     [DataRow("MC")]
     [TestMethod()]
     public void VehicleTypeEqualTest(string exepected)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today);
+        var mc = new MC("AB35987", DateTime.Today, false);
 
         // Act
         string actual = mc.VehicleType();
@@ -69,7 +83,7 @@ public class MCTests
     public void VehicleTypeNotEqualTest(string notExepcted)
     {
         // Arrange
-        var mc = new MC("AB35987", DateTime.Today);
+        var mc = new MC("AB35987", DateTime.Today, false);
 
         // Act
         string actual = mc.VehicleType();
@@ -85,7 +99,7 @@ public class MCTests
     public void LicensePlateLengthLimitCreateSuccessfullyTest(string licensePlate)
     {
         // Act
-        var mc = new MC(licensePlate, DateTime.Today);
+        var mc = new MC(licensePlate, DateTime.Today, false);
 
         // Assert
         Assert.IsNotNull(mc);
@@ -103,7 +117,7 @@ public class MCTests
         // Act
         try
         {
-            var mc = new MC(licensePlate, DateTime.Today);
+            var mc = new MC(licensePlate, DateTime.Today, false);
         }
         catch (Exception ex)
         {

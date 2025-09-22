@@ -1,4 +1,6 @@
-﻿namespace Bridge;
+﻿using System.Runtime.CompilerServices;
+
+namespace Bridge;
 
 /// <summary>
 /// Class representing a car with a license plate and date
@@ -10,18 +12,25 @@ public class Car : Vehicle
     /// and inherits from the vehicle base class
     /// </summary>
     /// <param name="licensePlate">A string consisting of numbers and letters</param>
-    public Car(string licensePlate, DateTime date)
-        : base(licensePlate, date)
+    public Car(string licensePlate, DateTime date, bool brobizz)
+        : base(licensePlate, date, brobizz)
     {
     }
 
     /// <summary>
-    /// Returns fixed price as a double
+    /// Returns the price of a ticket as a double. Gives a % discount if Brobizz is true.
     /// </summary>
-    /// <returns>The price of the vehicle</returns>
+    /// <returns>The total ticket price after applicable discount</returns>
     public override double Price()
     {
-        return 230.0;
+        double price = 230.0;
+        int discountPercent = 10;
+
+        if (Brobizz == true)
+        {
+            price = price - (price * discountPercent / 100);
+        }
+        return price;
     }
 
     /// <summary>
