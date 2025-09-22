@@ -3,12 +3,13 @@
 namespace Bridge;
 
 /// <summary>
-/// Class representing a car with a license plate and date
+/// Class representing a car with a license plate and bridge ticket date
+/// Inherits from the base class "Vehicle"
 /// </summary>
 public class Car : Vehicle
 {
     /// <summary>
-    /// Initializes a new instance of the Car class with license plate, and date
+    /// Initializes a new instance of the Car class with license plate and bridge ticket date
     /// and inherits from the vehicle base class
     /// </summary>
     /// <param name="licensePlate">A string consisting of numbers and letters</param>
@@ -18,7 +19,7 @@ public class Car : Vehicle
     }
 
     /// <summary>
-    /// Returns the price of a ticket as a double. Gives a % discount if Brobizz is true.
+    /// Returns the price of a ticket as a double. Gives a % discount if boolean "Brobizz" is true.
     /// </summary>
     /// <returns>The total ticket price after applicable discount</returns>
     public override double Price()
