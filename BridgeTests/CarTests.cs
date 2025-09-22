@@ -1,12 +1,15 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Bridge;
+﻿using Bridge;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BridgeTests;
+
+[ExcludeFromCodeCoverage]
 
 [TestClass()]
 public class CarTests
@@ -24,7 +27,7 @@ public class CarTests
         double actual = car.Price();
 
         // Assert
-        Assert.AreEqual(expected, actual);
+        Assert.AreEqual(expected, actual, 0.001);
     }
 
     [DataRow(229.0)]
@@ -42,7 +45,7 @@ public class CarTests
         double actual = car.Price();
 
         // Assert
-        Assert.AreNotEqual(notExpected, actual);
+        Assert.AreNotEqual(notExpected, actual, 0.001);
     }
 
     [DataRow(207.0)]
@@ -56,7 +59,7 @@ public class CarTests
         double actual = car.Price();
 
         // Assert
-        Assert.AreEqual(exepected, actual);
+        Assert.AreEqual(exepected, actual, 0.001);
     }
 
     [DataRow("Car")]
