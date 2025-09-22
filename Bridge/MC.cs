@@ -15,10 +15,10 @@ public class MC : Vehicle
     /// Initializes a new instance of the MC class with license plate, and date
     /// and inherits from the vehicle base class
     /// </summary>
-    /// <param name="licenseplate">A string consisting of numbers and letters</param>
+    /// <param name="licensePlate">A string consisting of numbers and letters</param>
     /// <param name="date">Date associated with the motorcycle</param>
-    public MC(string licenseplate, DateTime date)
-        : base(licenseplate, date)
+    public MC(string licensePlate, DateTime date)
+        : base(licensePlate, date)
     { 
     }
 

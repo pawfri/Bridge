@@ -9,9 +9,9 @@ public class Car : Vehicle
     /// Initializes a new instance of the Car class with license plate, and date
     /// and inherits from the vehicle base class
     /// </summary>
-    /// <param name="licenseplate">A string consisting of numbers and letters</param>
-    public Car(string licenseplate, DateTime date)
-        : base(licenseplate, date)
+    /// <param name="licensePlate">A string consisting of numbers and letters</param>
+    public Car(string licensePlate, DateTime date)
+        : base(licensePlate, date)
     {
     }
 

@@ -11,17 +11,17 @@ namespace Bridge;
 /// </summary>
 public abstract class Vehicle
 {
-    public string Licenseplate { get; }
+    public string LicensePlate { get; }
     public DateTime Date { get; }
 
     /// <summary>
     /// Initializes a new instance of the Vehicle class with a specified date
     /// </summary>
-    /// <param name="licenseplate">A string consisting of numbers and letters</param>
+    /// <param name="licensePlate">A string consisting of numbers and letters</param>
     /// <param name="date">Date associated with the vehicle</param> 
-    public Vehicle(string licenseplate, DateTime date)
+    public Vehicle(string licensePlate, DateTime date)
     {
-        Licenseplate = licenseplate;
+        LicensePlate = licensePlate;
         Date = date;
     }
 
