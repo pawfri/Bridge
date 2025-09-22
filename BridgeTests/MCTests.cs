@@ -77,4 +77,40 @@ public class MCTests
         // Assert
         Assert.AreNotEqual(notExepcted, actual);
     }
+
+    [DataRow("AB35987")]
+    [DataRow("1337")]
+    [DataRow("AB4008")]
+    [TestMethod()]
+    public void LicensePlateLengthLimitCreateSuccessfullyTest(string licensePlate)
+    {
+        // Act
+        var mc = new MC(licensePlate, DateTime.Today);
+
+        // Assert
+        Assert.IsNotNull(mc);
+    }
+
+    [DataRow("AB35987Y")]
+    [DataRow("AB35987Y1")]
+    [DataRow("AB35987Y12")]
+    [TestMethod()]
+    public void LicensePlateLengthLimitThrowExceptionTest(string licensePlate)
+    {
+        //Arrange
+        Exception exception = null;
+
+        // Act
+        try
+        {
+            var mc = new MC(licensePlate, DateTime.Today);
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+        }
+
+        // Assert
+        Assert.IsNotNull(exception);
+    }
 }

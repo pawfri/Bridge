@@ -47,7 +47,7 @@ public class CarTests
 
     [DataRow("Car")]
     [TestMethod()]
-    public void VehicleTypeEqualTest(string exepected)
+    public void VehicleTypeEqualTest(string expected)
     {
         // Arrange
         var car = new Car("AB35987", DateTime.Today);
@@ -56,7 +56,7 @@ public class CarTests
         string actual = car.VehicleType();
 
         // Assert
-        Assert.AreEqual(exepected, actual);
+        Assert.AreEqual(expected, actual);
     }
 
     [DataRow("bus")]
@@ -65,7 +65,7 @@ public class CarTests
     [DataRow("train")]
     [DataRow("mc")]
     [TestMethod()]
-    public void VehicleTypeNotEqualTest(string notExepcted)
+    public void VehicleTypeNotEqualTest(string notExpected)
     {
         // Arrange
         var car = new Car("AB35987", DateTime.Today);
@@ -74,6 +74,43 @@ public class CarTests
         string actual = car.VehicleType();
 
         // Assert
-        Assert.AreNotEqual(notExepcted, actual);
+        Assert.AreNotEqual(notExpected, actual);
     }
+
+    [DataRow("AB35987")]
+    [DataRow("1337")]
+    [DataRow("AB4008")]
+    [TestMethod()]
+    public void LicensePlateLengthLimitCreateSuccessfullyTest(string licensePlate)
+    {
+        // Act
+        var car = new Car(licensePlate, DateTime.Today);
+
+        // Assert
+        Assert.IsNotNull(car);
+    }
+
+    [DataRow("AB35987Y")]
+    [DataRow("AB35987Y1")]
+    [DataRow("AB35987Y12")]
+    [TestMethod()]
+    public void LicensePlateLengthLimitThrowExceptionTest(string licensePlate)
+    {
+        //Arrange
+        Exception exception = null;
+
+        // Act
+        try
+        {
+            var car = new Car(licensePlate, DateTime.Today);
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+        }
+
+        // Assert
+        Assert.IsNotNull(exception);
+    }
+
 }

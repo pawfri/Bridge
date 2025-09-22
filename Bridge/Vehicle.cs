@@ -23,6 +23,8 @@ public abstract class Vehicle
     {
         LicensePlate = licensePlate;
         Date = date;
+
+        LicensePlateLengthLimit();
     }
 
     /// <summary>
@@ -32,9 +34,21 @@ public abstract class Vehicle
     public abstract double Price();
 
     /// <summary>
-    /// Abstract method
+    /// Returns vehicle type as a string
     /// </summary>
     /// <returns>A string of the vehicle type</returns>
     public abstract string VehicleType();
+
+    /// <summary>
+    /// Validate if license plate is longer than maximum 7 characters
+    /// </summary>
+    /// <exception cref="Exception">Throws an excepsion if license plate is too long</exception>
+    public void LicensePlateLengthLimit()
+    {
+        if (LicensePlate.Length > 7)
+        {
+            throw new Exception("License plate may not be longer than 7 characters");
+        }
+    }
 
 }
