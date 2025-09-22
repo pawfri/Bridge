@@ -5,17 +5,14 @@
 /// </summary>
 public class Car : Vehicle
 {
-    public string Licenseplate { get; set; }
-
     /// <summary>
-    /// Initializes a new instace of the Car class with license plate, and date
+    /// Initializes a new instance of the Car class with license plate, and date
     /// and inherits from the vehicle base class
     /// </summary>
     /// <param name="licenseplate">A string consisting of numbers and letters</param>
     public Car(string licenseplate, DateTime date)
-        : base(date)
+        : base(licenseplate, date)
     {
-        Licenseplate = licenseplate;
     }
 
     /// <summary>

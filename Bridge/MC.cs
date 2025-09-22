@@ -11,18 +11,15 @@ namespace Bridge;
 /// </summary>
 public class MC : Vehicle
 {
-    public string Licenseplate { get; set; }
-
     /// <summary>
-    /// Initializes a new instace of the MC class with license plate, and date
+    /// Initializes a new instance of the MC class with license plate, and date
     /// and inherits from the vehicle base class
     /// </summary>
     /// <param name="licenseplate">A string consisting of numbers and letters</param>
-    /// <param name="date">Date associated with the car</param>
+    /// <param name="date">Date associated with the motorcycle</param>
     public MC(string licenseplate, DateTime date)
-        : base(date)
+        : base(licenseplate, date)
     { 
-        Licenseplate = licenseplate; 
     }
 
     /// <summary>
