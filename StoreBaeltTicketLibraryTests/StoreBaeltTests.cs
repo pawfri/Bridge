@@ -16,31 +16,21 @@ namespace StoreBaeltTicketLibrary.Tests;
 [TestClass()]
 public class StoreBaeltTests
 {
-    [DataRow(175.95)]
+    [DataRow(175.95, 2025, 9, 27)]
+    [DataRow(175.95, 2025, 9, 28)]
+    [DataRow(175.95, 2025, 10, 4)]
+    [DataRow(175.95, 2026, 3, 1)]
+    [DataRow(175.95, 2024, 12, 29)]
     [TestMethod()]
-    public void WeekendDiscountSaturdayCarWithBrobizzTest(double expected)
+    public void WeekendDiscountCarWithBrobizzTest(double expectedPrice, int year, int month, int day)
     {
         // Arrange
-        var car = new Car("AB98123", new DateTime(2025, 9, 27), true);
+        var car = new Car("AB98123", new DateTime(year, month, day), true);
 
         // Act
         double actual = StoreBaelt.WeekendDiscount(car);
 
         // Assert       
-        Assert.AreEqual(expected, actual, 0.001);
-    }
-
-    [DataRow(175.95)]
-    [TestMethod()]
-    public void WeekendDiscountSundayCarWithBrobizzTest(double expected)
-    {
-        // Arrange
-        var car = new Car("AB98123", new DateTime(2025, 9, 28), true);
-
-        // Act
-        double actual = StoreBaelt.WeekendDiscount(car);
-
-        // Assert       
-        Assert.AreEqual(expected, actual, 0.001);
+        Assert.AreEqual(expectedPrice, actual, 0.001);
     }
 }
