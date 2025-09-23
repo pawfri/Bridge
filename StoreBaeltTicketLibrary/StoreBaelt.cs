@@ -4,7 +4,7 @@ namespace StoreBaeltTicketLibrary;
 
 public class StoreBaelt
 {
-    public double WeekendDiscount(Vehicle vehicle)
+    public static double WeekendDiscount(Vehicle vehicle)
     {
         double price = vehicle.Price();
         int discountPercent = 15;
