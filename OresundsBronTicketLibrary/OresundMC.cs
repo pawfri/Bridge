@@ -45,7 +45,7 @@ public class OresundMC : Vehicle
 
         if (Brobizz == true)
         {
-            price = 92;
+            price = 92.0;
         }
         return price;
     }
