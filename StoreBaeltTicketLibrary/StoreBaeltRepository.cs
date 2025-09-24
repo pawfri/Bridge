@@ -10,7 +10,7 @@ namespace StoreBaeltTicketLibrary;
 /// <summary>
 /// Repository for StoreBaelt Vehicle tickets
 /// </summary>
-public class StoreBaeltRepository
+public class StoreBaeltRepository : IStoreBaeltRepository
 {
     /// <summary>
     /// Static list to keep track of Vehicle tickets for StoreBaelt
