@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Testing.Platform.MSBuild;
 
 namespace StoreBaeltTicketLibrary.Tests;
 
@@ -49,8 +50,12 @@ public class StoreBaeltRepositoryTests
         Assert.AreEqual(2, StoreBaeltRepository.GetAll().Count);
     }
 
+    [DataRow("YX12389", 2)]
+    [DataRow("BX87456", 1)]
+    [DataRow("CE87953", 1)]
+    [DataRow("ZE56218", 0)]
     [TestMethod]
-    public void GetTicketsLicensePlateTest()
+    public void GetTicketsLicensePlateTest(string licensePlate, int expectedCount)
     {
         // Arrange
         var ticket = new Car("YX12389", false);
@@ -65,6 +70,6 @@ public class StoreBaeltRepositoryTests
         StoreBaeltRepository.AddTicket(ticket4);
 
         // Assert
-        Assert.AreEqual(2, StoreBaeltRepository.GetTicketsLicensePlate("YX12389").Count);
+        Assert.AreEqual(expectedCount, StoreBaeltRepository.GetTicketsLicensePlate(licensePlate).Count);
     }
 }
