@@ -2,8 +2,18 @@
 
 namespace StoreBaeltTicketLibrary;
 
+/// <summary>
+/// Library Class for StoreBaelt to expand upon the logic DLL from Bridge.
+/// </summary>
 public class StoreBaelt
 {
+    /// <summary>
+    /// Returns the price of a ticket as a double with all valid discounts.
+    /// Only Cars will get the special WeekendDiscount on top of the Brobizz discount.
+    /// Brobizz discount still apply to all vehicles types.
+    /// </summary>
+    /// <param name="vehicle">The vehicle buying the ticket</param>
+    /// <returns></returns>
     public static double WeekendDiscount(Vehicle vehicle)
     {
         double price = vehicle.Price();
