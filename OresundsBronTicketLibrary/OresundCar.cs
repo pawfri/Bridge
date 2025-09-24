@@ -7,7 +7,7 @@ using Bridge;
 
 namespace OresundsBronTicketLibrary;
 
-internal class OresundCar : Vehicle
+public class OresundCar : Vehicle
 {
     public OresundCar(string licensePlate, bool brobizz)
     : base(licensePlate, brobizz)
