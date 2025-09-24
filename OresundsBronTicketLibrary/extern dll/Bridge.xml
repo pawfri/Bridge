@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bridge</name>
+    </assembly>
+    <members>
+        <member name="T:Bridge.Car">
+            <summary>
+            Class representing a car with a license plate and bridge ticket date
+            Inherits from the base class "Vehicle"
+            </summary>
+        </member>
+        <member name="M:Bridge.Car.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initilizes a new instance of a Car
+            Date will always be set to the immediate day and time when initializing
+            </summary>
+            <param name="licensePlate">A string consisting of numbers and letters</param>
+            <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+        </member>
+        <member name="M:Bridge.Car.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Initializes a new instance of a Car
+            Date can be manually specified when initializing
+            </summary>
+            <param name="licensePlate">A string consisting of numbers and letters</param>
+        </member>
+        <member name="M:Bridge.Car.Price">
+            <summary>
+            Returns the price of a ticket as a double. Gives a % discount if boolean "Brobizz" is true.
+            </summary>
+            <returns>The total ticket price after applicable discount</returns>
+        </member>
+        <member name="M:Bridge.Car.VehicleType">
+            <summary>
+            Returns vehicle type as a string
+            </summary>
+            <returns>The type of vehicle</returns>
+        </member>
+        <member name="T:Bridge.MC">
+            <summary>
+            Class representing a MC (Motorcycle) with a license plate and bridge ticket date
+            Inherits from the base class "Vehicle"
+            </summary>
+        </member>
+        <member name="M:Bridge.MC.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initilizes a new instance of a MC (Motorcycle)
+            Date will always be set to the immediate day and time when initializing
+            </summary>
+            <param name="licensePlate">A string consisting of numbers and letters</param>
+            <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+        </member>
+        <member name="M:Bridge.MC.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Initilizes a new instance of a MC (Motorcycle)
+            Date can be manually specified when initializing
+            </summary>
+            <param name="licensePlate">A string consisting of numbers and letters</param>
+            <param name="date">Date associated with the motorcycle</param>
+        </member>
+        <member name="M:Bridge.MC.Price">
+            <summary>
+            Returns the price of a ticket as a double. Gives a % discount if boolean "Brobizz" is true.
+            </summary>
+            <returns>The total ticket price after applicable discount</returns>
+        </member>
+        <member name="M:Bridge.MC.VehicleType">
+            <summary>
+            Returns vehicle type as a string
+            </summary>
+            <returns>The type of vehicle</returns>
+        </member>
+        <member name="T:Bridge.Vehicle">
+            <summary>
+            Base abstract class for all vehicles
+            </summary>
+        </member>
+        <member name="M:Bridge.Vehicle.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initilizes a new instance of a vehicle
+            Date will always be set to the immediate day and time when initializing
+            </summary>
+            <param name="licensePlate">A string consisting of numbers and letters</param>
+            <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+        </member>
+        <member name="M:Bridge.Vehicle.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Initializes a new instance of the Vehicle
+            Date can be manually specified when initializing
+            </summary>
+            <param name="licensePlate">A string consisting of numbers and letters</param>
+            <param name="date">Date associated with the vehicle</param> 
+            <param name="brobizz">A boolean for wheter a Brobizz is included for discounts</param>
+        </member>
+        <member name="M:Bridge.Vehicle.Price">
+            <summary>
+            Returns fixed price as a double
+            </summary>
+            <returns>A double of the vehicle price</returns>
+        </member>
+        <member name="M:Bridge.Vehicle.VehicleType">
+            <summary>
+            Returns vehicle type as a string
+            </summary>
+            <returns>A string of the vehicle type</returns>
+        </member>
+        <member name="M:Bridge.Vehicle.LicensePlateLengthLimit">
+            <summary>
+            Validate if license plate is longer than maximum 7 characters
+            </summary>
+            <exception cref="T:System.Exception">Throws an excepsion if license plate is too long</exception>
+        </member>
+    </members>
+</doc>
